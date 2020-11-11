@@ -6,6 +6,7 @@ public class ModifiedSwap {
 
     int turn = -1;
 
+
     public synchronized void swap(int isCSFree,int isInCS){
         int temp = isCSFree;
         this.isCSFree = isInCS;
