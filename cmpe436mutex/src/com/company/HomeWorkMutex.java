@@ -8,17 +8,24 @@ public class HomeWorkMutex implements Lock {
 
     ModifiedTestAndSet mylock;
 
-    public HomeWorkMutex () {
-        this.mylock = new ModifiedTestAndSet();
+    public HomeWorkMutex (ModifiedTestAndSet mylock) {
+        this.mylock = mylock;
     }
 
     public void requestCS (int threadId) {
-        while (this.mylock.isNotFreeToEnterCS(threadId));
+        //System.out.println("Requesting");
+        int i = 0;
+        while (this.mylock.isNotFreeToEnterCS(threadId)){
+
+            //System.out.println("Thread "+threadId+"is in bussing waiting Turn is "+mylock.turn + "myvlue is "+mylock.myValue);
+        }
         System.out.println("Thread "+threadId+" is in CS : ");
     }
 
-    public void releaseCS (int threadId) {
+    public void releaseCS () {
+
         this.mylock.testAndSet(0);
+        //System.out.println("Releasing Turn is "+mylock.turn + "myvlue is "+mylock.myValue);
     }
 
     @Override

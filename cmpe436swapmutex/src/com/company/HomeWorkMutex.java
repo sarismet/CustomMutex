@@ -13,12 +13,12 @@ public class HomeWorkMutex implements Lock {
     }
 
     public void requestCS (int threadId) {
-        while (this.mylock.isNotFreeToEnterCS(1,0));
+        while (this.mylock.isNotFreeToEnterCS(threadId));
         System.out.println("Thread "+threadId+" is in CS : ");
     }
 
     public void releaseCS () {
-        this.mylock.isNotFreeToEnterCS(0,1);
+        this.mylock.swap(0,1);
     }
 
     @Override

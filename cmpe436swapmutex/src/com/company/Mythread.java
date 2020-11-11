@@ -10,12 +10,12 @@ public class Mythread extends Thread {
 
     public void run() {
         int index = 0;
-        while(index < 10){
-            System.out.println("Thread id is "+this.id);
+        while(index < 100){
+            //System.out.println("Thread id is "+this.id);
             myMutex.requestCS(id);
-            System.out.println("isInCS"+this.myMutex.mylock.isInCS+"isCSFree"+this.myMutex.mylock.isCSFree);
+            //System.out.println("isInCS"+this.myMutex.mylock.isInCS+"isCSFree"+this.myMutex.mylock.isCSFree);
             myMutex.releaseCS();
-            System.out.println("isInCS"+this.myMutex.mylock.isInCS+"isCSFree"+this.myMutex.mylock.isCSFree);
+            //System.out.println("isInCS"+this.myMutex.mylock.isInCS+"isCSFree"+this.myMutex.mylock.isCSFree);
 
 
             index++;
