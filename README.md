@@ -19,7 +19,7 @@
 
 # Swap
 ## Files Structures
-  - The codes regarding with swap are in cmpe436swapmutex and cmpe436swapmutexSPARE and the java codes are in their src/com/company directories. These are all compiled you can find the files with extention .class in their out folders.
+  - The codes regarding with swap are in cmpe436swapmutex and cmpe436swapmutexSPARE. These are seperated project and not related to each other. I just thought a similar way and implemented another project in cmpe436swapmutexSPARE. The java codes are in their src/com/company directories. These are all compiled you can find the files with extention .class in their out folders.
 ## Idea
 - The idea is the same as TestAndTest. We have a isNotFreeToEnterCS method that takes 1 parameter which is the id of thead. We request by using this method. If it returns false then we get into CS. If returns true then keep staying in while loop.
 - In this part we use the swap to request CS. if the swaps method are 1,0 then we want CS. If parameters are 0 ,1 then we want to release the CS. 
